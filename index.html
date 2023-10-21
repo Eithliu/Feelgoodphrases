@@ -4,7 +4,17 @@
     <meta charset="UTF-8">
     <link rel="icon" href="./src/assets/Feelgoodlogo.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Un site qui vous aide à vous sentir mieux et à écrire de supers messages matinaux à vos collègues">
     <title>Feel Good Phrases</title>
+    <link rel="apple-touch-icon" href="" sizes="180x180">
+    <meta name="theme-color" content="#fffff">
+    <script>
+      if('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js', { scope: '/' })
+        })
+      }
+    </script>
   </head>
   <body>
     <div id="app"></div>

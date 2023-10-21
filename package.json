@@ -13,7 +13,8 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.4.0",
+    "execa": "latest",
     "vite": "^4.4.11",
-    "execa": "latest"
+    "vite-plugin-pwa": "^0.16.5"
   }
 }
