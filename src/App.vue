@@ -1,22 +1,48 @@
 <template>
   <section class="section">
     <img src="./assets/Feelgoodlogo.png" alt="Logo Feel Good Phrases">
-    <button @click="generatePhrase">
-      Aime-moi !
-    </button>
-    <hr>
-    <p class="nice-phrase">{{ sentence }}</p>
+    <div class="btn-section">
+      <div class="btns">
+        <button @click="generatePhrase" class="mou">
+          J'ai un petit coup de mou
+        </button>
+        <button @click="generateMorning" class="matin">
+          C'est le matin
+        </button>
+      </div>
+      <div class="p-section">
+        <p class="nice-phrase">{{ sentence }}</p>
+        <p class="morning">{{ morningSentence }}</p>
+      </div>
+    </div>
   </section>
 </template>
 
 <script setup>
 import { ref } from 'vue';
 const sentence = ref('');
+const morningSentence = ref('');
+
+const morningData = [
+  'Bien le bonjour et merveilleuse journée à toutes et tous !',
+  'Que votre journée vous soit douce et agréable !',
+  'Aloha !',
+  'Ohayo gozaimasu o genki desuka',
+  'Joyeuse journée pleine de bonheur !',
+  'Grand bonjour à chacun et chacune de vous !',
+  'Hello and have a wonderfully good morning!',
+  'Du soleil dans vos coeurs pour passer une joyeuse journée 💖',
+  'Bonjour et Namaste pour une journée zen !',
+  'Wesh, que la poésie habite ta journée toute entière !',
+  'Coucou les ami.e.s !',
+  'Yo et belle journée !',
+  'Que ta journée soit incroyable et exceptionnelle comme toi !',
+];
 
 const data = [
   '💙💜 Tu es belle, et tu mérites de t\'aimer 💙💜',
   '💚 Tu vas y arriver, je crois en toi ! 💚',
-  '🤩 La vie est belle parce que tu en fait partie ! 🤩',
+  '🤩 La vie est belle parce que tu en fais partie ! 🤩',
   '💅 Tu as le droit de prendre du repos pour t\'occuper de toi. 💅',
   '💝 Soit bienveillante envers toi ! 💝',
   '💕 Tu as droit à l\'erreur. 💕',
@@ -38,11 +64,64 @@ function randomize(phrase) {
 
 function generatePhrase() {
   sentence.value = randomize(data);
+  morningSentence.value = '';
 };
 
+function generateMorning() {
+  morningSentence.value = randomize(morningData);
+  sentence.value = '';
+}
 </script>
 
 <style scoped>
+@media (min-width: 960px) {
+  .section {
+    display: flex;
+    flex-direction: column;
+  }
+  .btn-section {
+    display: flex;
+    flex-direction: column;
+  }
+  .p-section {
+    display: flex;
+    flex-direction: row;
+    font-size: 20px;
+    margin: auto;
+  }
+  p {
+    text-align: center;
+  }
+  .btns {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 80%;
+    margin: auto;
+  }
+}
+button {
+  height: 50px;
+  border: none;
+  cursor: pointer;
+  padding: 15px;
+  font-size: 20px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 5px 15px 5px;
+}
+.mou {
+  background-color: #5CE1E6;
+  box-shadow: 2px 2px 0 #318588;
+  color: white;
+}
+.matin {
+  background-color: #7414b4;
+  box-shadow: 2px 2px 0 #5a0d8d;
+  color: white;
+}
 img {
   width: 200px;
   height: auto;
@@ -50,41 +129,34 @@ img {
   justify-content: center;
   margin: auto;
 }
+.nice-phrase, .morning {
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 25px;
+  margin: 25px 8px;
+}
+
+.nice-phrase {
+  color: rgb(0, 146, 134);
+}
+
+.morning {
+  color: #5a0d8d;
+}
+
+@media (max-width: 960px) {
+  button {
+    width: 95%;
+  }
+  .btn-section {
+  margin-bottom: 15px;
+}
 .section {
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  margin: auto;
   max-width: 400px;
 }
-
-button {
-  width: 100%;
-  height: 50px;
-  border: none;
-  cursor: pointer;
-  background-color: #5CE1E6;
-  box-shadow: 2px 2px 0 #318588;
-  color: white;
-  font-size: 20px;
-  text-align: center;
 }
 
-hr {
-  margin: 15px 0;
-  color: plum;
-}
-h1 {
-  text-align: center;
-  font-weight: bold;
-}
-
-.nice-phrase {
-  text-align: center;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 25px;
-  color: rgb(0, 146, 134);
-  margin: 25px 8px;
-}
 </style>
