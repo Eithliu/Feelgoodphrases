@@ -1,29 +1,7 @@
 # Feelgoodphrase
 
-This template should help get you started developing with Vue 3 in Vite.
+This app is to make you feel good by generating random feel good sentences every time you want to feel good.
 
-## Recommended IDE Setup
+## Why ?
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+I thought it would be a godd tiny exercise to begin with. It's made in Vue 3, and it will eventually be more powerful (i18n or choosing if your a man or a woman (it's all feminine for now)).
