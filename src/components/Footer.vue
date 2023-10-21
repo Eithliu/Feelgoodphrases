@@ -12,6 +12,6 @@
     text-align: center;
     font-size: 15px;
     width: 100%;
-    top: calc(100% - 24px);
+    top: calc(100% - 32px);
 }
 </style>
