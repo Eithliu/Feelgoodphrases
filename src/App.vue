@@ -1,6 +1,9 @@
 <template>
   <section class="section">
     <img src="./assets/Feelgoodlogo.png" alt="Logo Feel Good Phrases">
+    <div class="intro">
+      <span class="fgp">Feel Good Phrases</span> est un petit site qui permet de te remotiver si tu as un coup de mou, ou bien de t'aider à rédiger un message de bonne journée à tes collègues si t'es en panne d'inspi.
+    </div>
     <div class="btn-section">
       <div class="btns">
         <button @click="generatePhrase" class="mou">
@@ -99,6 +102,21 @@ function generateMorning() {
     width: 80%;
     margin: auto;
   }
+  .intro {
+    width: 50%;
+    padding: 5px;
+  }
+}
+.fgp {
+  font-weight: bold;
+}
+.intro {
+  border: solid 1px #FFDE59;
+  border-radius: 5px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 20px auto;
+  line-height: 1.5em;  
 }
 button {
   height: 50px;
@@ -145,6 +163,10 @@ img {
 }
 
 @media (max-width: 960px) {
+  .intro {
+    width: 85%;
+    padding: 10px;
+  }
   button {
     width: 95%;
   }
