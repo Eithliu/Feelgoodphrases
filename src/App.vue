@@ -2,7 +2,8 @@
   <section class="section">
     <img src="./assets/Feelgoodlogo.png" alt="Logo Feel Good Phrases">
     <div class="intro">
-      <span class="fgp">Feel Good Phrases</span> est un petit site qui permet de te remotiver si tu as un coup de mou, ou bien de t'aider à rédiger un message de bonne journée à tes collègues si t'es en panne d'inspi.
+      <span class="fgp">Feel Good Phrases</span> est un petit site qui permet de te remotiver si tu as un coup de mou, ou bien de t'aider à rédiger un message de bonne journée à tes collègues si t'es en panne d'inspi.<br>Clique sur l'icône             <font-awesome-icon icon="fa-regular fa-copy" size="lg" color="#00000" /> pour copier la phrase !
+
     </div>
     <div class="btn-section">
       <div class="btns">
