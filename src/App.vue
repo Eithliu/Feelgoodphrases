@@ -14,8 +14,22 @@
         </button>
       </div>
       <div class="p-section">
-        <p class="nice-phrase">{{ sentence }}</p>
-        <p class="morning">{{ morningSentence }}</p>
+        <div class="sentence-box">
+          <p class="nice-phrase">
+            {{ sentence }}
+          </p>
+          <a href="#" @click="copy" class="icon">
+            <font-awesome-icon icon="fa-regular fa-copy"  :class="sentence ? '': 'noshow'" size="lg" />
+          </a>
+        </div>
+        <div class="sentence-box">
+          <p class="morning">
+            {{ morningSentence }}
+          </p>
+          <a href="#" @click="copy" class="icon">
+            <font-awesome-icon icon="fa-regular fa-copy" :class="morningSentence ? '': 'noshow'" size="lg" />
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -77,6 +91,10 @@ function generateMorning() {
   morningSentence.value = randomize(morningData);
   sentence.value = '';
 }
+
+function copy(sentence) {
+
+}
 </script>
 
 <style scoped>
@@ -109,6 +127,16 @@ function generateMorning() {
     width: 50%;
     padding: 5px;
   }
+}
+.sentence-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px;
+}
+.noshow {
+  display: none;
 }
 .fgp {
   font-weight: bold;
