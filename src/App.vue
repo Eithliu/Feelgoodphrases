@@ -19,7 +19,7 @@
             {{ sentence }}
           </p>
           <a href="#" @click="copy" class="icon">
-            <font-awesome-icon icon="fa-regular fa-copy"  :class="sentence ? '': 'noshow'" size="lg" />
+            <font-awesome-icon icon="fa-regular fa-copy"  :class="sentence ? '': 'noshow'" size="lg" color="#009286" />
           </a>
         </div>
         <div class="sentence-box">
@@ -27,7 +27,7 @@
             {{ morningSentence }}
           </p>
           <a href="#" @click="copy2" class="icon">
-            <font-awesome-icon icon="fa-regular fa-copy" :class="morningSentence ? '': 'noshow'" size="lg" />
+            <font-awesome-icon icon="fa-regular fa-copy" :class="morningSentence ? '': 'noshow'" size="lg" color="#7414b4" />
           </a>
         </div>
       </div>
@@ -205,7 +205,7 @@ img {
 }
 
 .nice-phrase {
-  color: rgb(0, 146, 134);
+  color: #009286;
 }
 
 .morning {
