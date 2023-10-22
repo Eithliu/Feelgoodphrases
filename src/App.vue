@@ -26,7 +26,7 @@
           <p class="morning">
             {{ morningSentence }}
           </p>
-          <a href="#" @click="copy" class="icon">
+          <a href="#" @click="copy2" class="icon">
             <font-awesome-icon icon="fa-regular fa-copy" :class="morningSentence ? '': 'noshow'" size="lg" />
           </a>
         </div>
@@ -39,6 +39,29 @@
 <script setup>
 import { ref } from 'vue';
 import Footer from './components/Footer.vue';
+import useClipboard from 'vue-clipboard3';
+
+const { toClipboard } = useClipboard();
+
+const copy = async () => {
+  try {
+    await toClipboard(sentence.value);
+    console.log('Copied to clipboard');
+  } catch (e) {
+    console.error(e);
+  }
+  return { copy, sentence };
+}
+
+const copy2 = async () => {
+  try {
+    await toClipboard(morningSentence.value);
+    console.log('Copied to clipboard');
+  } catch (e) {
+    console.error(e);
+  }
+  return { copy2, morningSentence };
+}
 
 const sentence = ref('');
 const morningSentence = ref('');
@@ -90,10 +113,6 @@ function generatePhrase() {
 function generateMorning() {
   morningSentence.value = randomize(morningData);
   sentence.value = '';
-}
-
-function copy(sentence) {
-
 }
 </script>
 
