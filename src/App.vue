@@ -19,17 +19,30 @@
           <p class="nice-phrase">
             {{ sentence }}
           </p>
-          <a href="#" @click="copy" class="icon">
-            <font-awesome-icon icon="fa-regular fa-copy"  :class="sentence ? '': 'noshow'" size="lg" color="#009286" />
-          </a>
+          <Popper 
+            content="C'est copié !"
+            placement="top"
+            closeDelay="500"
+          >
+            <a href="#" @click="copy" class="icon">
+              <font-awesome-icon icon="fa-regular fa-copy"  :class="sentence ? '': 'noshow'" size="lg" color="#009286" />
+            </a>
+          </Popper>  
         </div>
         <div class="sentence-box">
           <p class="morning">
             {{ morningSentence }}
           </p>
-          <a href="#" @click="copy2" class="icon">
-            <font-awesome-icon icon="fa-regular fa-copy" :class="morningSentence ? '': 'noshow'" size="lg" color="#7414b4" />
-          </a>
+          <Popper 
+            content="C'est copié !"
+            placement="top"
+            closeDelay="1000"
+            interactive
+          >
+            <a href="#" @click="copy2" class="icon">
+              <font-awesome-icon icon="fa-regular fa-copy" :class="morningSentence ? '': 'noshow'" size="lg" color="#7414b4" />
+            </a>
+          </Popper>
         </div>
       </div>
     </div>
@@ -41,6 +54,7 @@
 import { ref } from 'vue';
 import Footer from './components/Footer.vue';
 import useClipboard from 'vue-clipboard3';
+import Popper from 'vue3-popper';
 
 const { toClipboard } = useClipboard();
 
@@ -147,6 +161,17 @@ function generateMorning() {
     width: 50%;
     padding: 5px;
   }
+}
+
+:root {
+  --popper-theme-background-color: #333333;
+  --popper-theme-background-color-hover: #333333;
+  --popper-theme-text-color: #ffffff;
+  --popper-theme-border-width: 0px;
+  --popper-theme-border-style: solid;
+  --popper-theme-border-radius: 6px;
+  --popper-theme-padding: 32px;
+  --popper-theme-box-shadow: 0 6px 30px -6px rgba(0, 0, 0, 0.25);
 }
 .sentence-box {
   display: flex;
