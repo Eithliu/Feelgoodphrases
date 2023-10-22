@@ -1,5 +1,5 @@
 <template>
-    <p class="footer">Ce petit site a été crée avec amour par <a href="https://github.com/eithliu">Iris</a>. © Octobre 2023.</p>
+    <p class="footer">Ce petit site a été créé avec amour par <a href="https://github.com/eithliu" target="_blank">Iris</a>. © Octobre 2023.</p>
 </template>
 
 <script setup>
